@@ -71,6 +71,7 @@ class Chirp:
     return self.get_reg(5)
 
   def light(self):
+    self.reset()
     self.write(3)
     while self.get_busy():
       time.sleep(0.1)
