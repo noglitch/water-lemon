@@ -75,6 +75,18 @@ class Chirp:
     time.sleep(1.5)
     return self.get_reg(4)
 
+  def get_busy(self):
+    self.write(0x09)
+    b = self.read()
+    # now flush to re-sync
+    t = self.read()
+    while t != 0xff:
+      t = self.read()
+    if b > 0:
+      return True
+    else:
+      return False
+
   def __repr__(self):
     return "<Chirp sensor on bus %d, addr 0x%02x>" % (self.bus_num, self.address)
 
