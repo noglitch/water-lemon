@@ -1,0 +1,46 @@
+GPIO map:
+---------
+
+PD28 (SAMA5D2 Xplained J20 pin 3) - linux gpio 124 - DFROBOT D10/DOUT4 - ARDUINO pin 3 connecteur J1 (~10)
+
+I2C map:
+--------
+
+i2c1
+PD4 (TWD1) (SAMA5D2 Xplained J22 pin 7) or (SAMA5D2 Xplained J18 pin 8) - linux gpio 100 - ARDUINO DUE
+PD5 (TWCK1) (SAMA5D2 Xplained J22 pin 8) or (SAMA5D2 Xplained J18 pin 7) - linux gpio 101 - ARDUINO DUE
+On SAMA5D2 Xplained J18: GND: pins 2 4 9 11 13 15 17 30 / 3.3V: pins 1 3
+-- at24mac @ 0x54
+
+
+i2c2: flx4 TODO: check
+PD12 (FLX4_IO0)
+PD13 (FLX4_IO1)
+
+
+PWM map:
+--------
+PB5 (PWMH2) (SAMA5D2 Xplained J20 pin 2) - linux gpio 37 - DFROBOT D9 - ARDUINO pin 2 connecteur J1 (~9)
+WARNING: need to disable green led.
+
+External components
+-------------------
+
+Phone cable pins (connector on rear side) (connector on front side) - (wire that connects to Xplained)
+White: VCC  GND - white
+Green: SDA  SDA - grey
+Red:   SCK  SCK - purple
+Black: GND  VCC - red
+
+5V Arduino tests:
+-----------------
+Moisture: min: 254 max: 900
+Temp: ok
+Light: min: 2700 max: 65535
+
+3.3V Xplained tests:
+--------------------
+Moisture: min: 310 max: 750 - 800
+Temp: ok
+Light: min: 20 max: 65535
+
