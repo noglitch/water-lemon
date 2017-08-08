@@ -54,18 +54,15 @@ class Chirp:
           time.sleep(10)
 
   def get_reg(self, reg):
-    self.write(reg)
-    time.sleep(0.1)
-
-    b1 = self.read()
-    b2 = self.read()
-
+    # read 2 bytes from register
+    val = self.bus.read_word_data(self.address, reg)
     # if the chrip has no data it sends
     # 0xff, use this to re-sync in case we loose values.
     t = self.read()
     while t != 0xff:
       t = self.read()
-    return (b1 << 8) + b2
+    # return swapped bytes (they come in wrong order)
+    return (val >> 8) + ((val & 0xFF) << 8)
 
   def cap_sense(self):
     return self.get_reg(0)
