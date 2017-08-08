@@ -82,8 +82,8 @@ class Chirp:
     return "<Chirp sensor on bus %d, addr 0x%02x>" % (self.bus_num, self.address)
 
 if __name__ == "__main__":
-  addr = 0x50
-  bus = 0
+  addr = 0x20
+  bus = 2
 
   if len(sys.argv) > 1:
     if sys.argv[1].startswith("0x"):
