@@ -42,6 +42,7 @@ if __name__ == "__main__":
 
     print chirp
     print "Send data to adafruit.io"
+    sys.stdout.flush()
     while True:
         val=chirp.temp()
         time.sleep(0.2)
