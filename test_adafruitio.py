@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-# cannot use python3 because smbus not working there
-# Modified script from https://github.com/JasperWallace/chirp-graphite/blob/master/chirp.py
-# by DanielTamm
 
 import time, sys
 
