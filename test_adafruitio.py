@@ -21,9 +21,9 @@ if __name__ == "__main__":
     print "Send data to adafruit.io"
     while True:
         val=chirp.temp()
-        time.sleep(0.5)
+        time.sleep(0.2)
         hval=chirp.cap_sense()
-        time.sleep(0.5)
+        time.sleep(0.2)
         lval=chirp.light();
         print "%d\t%d\t%d" % (hval, val, lval)
         valf=float(val) / 10
