@@ -65,6 +65,9 @@ class Chirp:
     return (val >> 8) + ((val & 0xFF) << 8)
 
   def cap_sense(self):
+    self.get_reg(0)
+    while self.get_busy():
+      time.sleep(0.1)
     return self.get_reg(0)
 
   def temp(self):
